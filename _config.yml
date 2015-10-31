@@ -1,0 +1,29 @@
+# Permalinks
+permalink:           pretty
+
+# Setup
+title:               Arthur Mathies
+# tagline:             A software ninja Blog
+url:                 http://arthurmathies.com
+baseurl:             ""
+paginate:            1
+
+# Assets
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+author:
+  name:              Arthur Mathies
+  url:               https://arthurmathies.com
+  email:             arthur.mathies@googlemail.com
+
+# Custom vars
+version:             0.0.0
+github:
+  repo:              https://github.com/poole/poole
+
+# gems
+gems: [jekyll-paginate]

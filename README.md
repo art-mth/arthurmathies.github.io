@@ -1,0 +1,1 @@
+This is the personal website and blog of Arthur Mathies, hosted by [GitHub Pages](http://pages.github.com). You can find it at [arthurmathies.github.io](http://arthurmathies.github.io).
