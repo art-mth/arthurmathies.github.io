@@ -17,13 +17,13 @@ sass:
 # About/contact
 author:
   name:              Arthur Mathies
-  url:               https://arthurmathies.com
+  url:               https://arthurmathies.github.io
   email:             arthur.mathies@googlemail.com
 
 # Custom vars
 version:             0.0.0
 github:
-  repo:              https://github.com/poole/poole
+  repo:              https://github.com/arthurmathies/arthurmathies.github.io
 
 # gems
 gems: [jekyll-paginate]
