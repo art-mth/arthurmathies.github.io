@@ -14,6 +14,7 @@ sass:
   sass_dir:          _sass
   style:            :compressed
 
+highligter:         pygments
 # About/contact
 author:
   name:              Arthur Mathies
