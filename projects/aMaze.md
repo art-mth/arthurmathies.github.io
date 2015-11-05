@@ -27,7 +27,4 @@ The game includes static(in turquoise) and attacking monsters(in red). The scree
 
 At any point you can also save the game and exit the game, look at the key or go back to the main menu.
 
-
-
-
-
+Also check out the [Github Repo](https://github.com/arthurmathies/aMaze)
