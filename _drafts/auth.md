@@ -1,6 +1,8 @@
 #Authentication
 
-In one of my recent projects the usual discussion topic of: "How should we handle authentication?" came up again. We were developing a Single-page-application with a seperate landing page where authentication was meant to be handled.. where users could switch between the login and signup using 
+Authentication is one of those things that comes up in almost every web application you will build. Also it is one of those things that is extremely important in order to make a trustworthy and secure application. 
+
+After having the "authentication" discussion again in one of my recent projects I decided to write a blog post series on exactly this topic. In this series I will go over the two  most widely used ways of handling authentication. Namely: session-based authentication and token-based authentication. I hope to give a clear overview of both of those and how they compare and scale.
 
 Quick introduction to doing authentication using sessions
 
