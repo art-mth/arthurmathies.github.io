@@ -11,5 +11,5 @@ Currently I am intensively diving into the fascinating world of JavaScript, whic
 
 I hope you enjoy my site and definitely hit me up at <a href="mailto:arthur.mathies@googlemail.com">arthur.mathies@googlemail.com</a> if you have questions or comments about anything on my site. 
 
-Also check out my <a href="/projects">Projects</a> and my [LinkedIn](https://linkedin.com/in/arthurmathies) or [Github](https://github.com/arthurmathies) if you are interested.
+Also check out my recent <a href="/projects">Projects</a> and my [LinkedIn](https://linkedin.com/in/arthurmathies) or [Github](https://github.com/arthurmathies) if you are interested.
 
