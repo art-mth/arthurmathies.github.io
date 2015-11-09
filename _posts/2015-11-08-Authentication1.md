@@ -97,7 +97,6 @@ db.userSchema = new mongoose.Schema({
   "password": String
 });
 db.User = mongoose.model("User", db.userSchema);
-// export the important database things
 module.exports = db;
 {% endhighlight %}
 
