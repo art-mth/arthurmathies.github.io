@@ -57,7 +57,7 @@ var session = require("express-session");
 var bcrypt = require("bcrypt-nodejs");
 {% endhighlight %}
 
-Especially interesting is the *bcrypt-nodejs* module. It provides a few functions which implement the bcrypt cryptographic algorithm and even handles the salt (an important security extra to guard against [rainbow table attacks](https://en.wikipedia.org/wiki/Rainbow_table)). Bcrypt continues to be one of the best algorithms to hash passwords. One of the reasons is that it is, by nature, slow and can be made even slower by increasing the number of iterations. The reason slow is good is because it makes a brute-force attack much harder. Since it is slow, it will also take an attacker much longer to test each key.
+Especially interesting is the *bcrypt-nodejs* module. It provides a few functions which implement the bcrypt cryptographic algorithm and even handles the salt (an important security extra to guard against [rainbow table attacks](https://en.wikipedia.org/wiki/Rainbow_table)). Bcrypt continues to be one of the best algorithms to hash passwords. One of the reasons is that it is, by nature, slow and can be made even slower by increasing the number of iterations. The reason slow is good is because it makes a brute-force attack much harder.
 
 {% highlight javascript %}
 var app = express();
