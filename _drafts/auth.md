@@ -7,7 +7,7 @@ title: Session-Based Authentication
 
 After having the "authentication" discussion again in one of my recent projects I decided to write a blog post series on exactly this topic. In this series I will go over the two most widely used ways of handling authentication. Namely: **session-based authentication** and **token-based authentication**. I hope to give a clear overview of both of those and how they compare and scale.
 
-This blog post will be as the title suggests on the former: session-based authentication. I will go over a simple server implementation and point out common pitfalls and important specifics on the way. I will also go into a little bit more detail on some of the things that I find interesting and important. The code for this post will also be on Github so you can follow along and play around with the code while reading. In the Github repo I will also add a very simple front-end so you can see the code doing it's job, namely handling the authentication. You can get the code [here]().
+This blog post will be as the title suggests on the former: session-based authentication. I will go over a simple server implementation and point out common pitfalls and important specifics on the way. I will also go into a little bit more detail on some of the things that I find interesting and important. The code for this post will also be on Github so you can follow along and play around with the code while reading. In the Github repo I will also add a very simple front-end so you can see the code doing it's job, namely handling the authentication. You can get the code [here](https://github.com/arthurmathies/session-based-authentication-tut).
 
 ###Sessions###
 As most of you probably hear and read very often HTTP is a stateless protocol. What that means is that any request is completely independent of any other request. There is no state saved across different requests. **Sessions** are a common solution for this problem so that the server can save data for the same user over a number of requests. The way this works is through cookies, which store small amounts of data on the client site for a specific client and website. 
@@ -31,7 +31,7 @@ Let's quickly go through the directory structure of the application. For the pur
 
 {% endhighlight %}
 
-We won't look into the html files, but you can check them out on [Github]() and they are on purpose limited to the bare minimum, so they do not distract from the authentication logic. The `.env` file stores all the environment variables that you want to keep sacred. In this application it contains database passwords and username as well as the session secret. It is also included in the `.gitignore` file. The `db.js` file handles the database setup and the `server.js` file contains all the routing and logic for the application.
+We won't look into the html files, but you can check them out on [Github](https://github.com/arthurmathies/session-based-authentication-tut) and they are on purpose limited to the bare minimum, so they do not distract from the authentication logic. The `.env` file stores all the environment variables that you want to keep sacred. In this application it contains database passwords and username as well as the session secret. It is also included in the `.gitignore` file. The `db.js` file handles the database setup and the `server.js` file contains all the routing and logic for the application.
 
 Enough talking. Let's jump into the code.
 
@@ -77,6 +77,8 @@ var env = habitat.load(__dirname + "/.env");
 var dbuser = env.get("db_user");
 var dbpassword = env.get("db_password");
 // connection url for our mongolab database
+// put in your own database URI here and store
+// username and password in the .env file.
 var dbUri = "mongodb://"+dbuser+":"+dbpassword+"@ds045614.mongolab.com:45614/authentication-tut";
 
 var db = {};
@@ -246,6 +248,8 @@ The *express-session* middleware populates req.session with the user for every r
 As you saw the *express-session* module does take a lot of work off our back so we do not have to worry about reading, writing and decrypting sessionId and data. I hope there was something interesting in this blogpost for everyone. If you have questions hit me up on <a href="mailto:arthur.mathies@googlemail.com">arthur.mathies@googlemail.com</a>.
 
 Also some final words of advice. All this is only secure if you send your data over an encrypted connection. Always use an SSL or TLS encrypted connection when you send passwords or other sensitive data. That means at least securing your signup or signin forms and their requests to the server.
+
+If you want try out the code you will need to create a *.env* file where you store dat
 
 Thanks for reading my first blog post and talk to you soon in one of my hopefully many blog posts to come. 
 
