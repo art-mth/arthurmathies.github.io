@@ -3,7 +3,7 @@ layout: post
 title: Session-Based Authentication
 ---
 ###Introduction###
-**Authentication** is one of those topics that comes up in almost every web application you will build. There are many ways to handle authentication and the one you chose will depend on the required balance between user security and convenience.
+**Authentication** is one of those topics that comes up in almost every web application you will build. There are many ways to handle authentication and the one you chose will depend on the required balance between user **security** and **convenience**.
 
 After having the "authentication" discussion again in one of my recent projects, I decided to write a blog post series on this noteworthy topic. In this series, I will go over the two most widely used ways of handling authentication, **session-based authentication** and **token-based authentication**. I hope to give a clear overview of both of these and how they compare and scale.
 
