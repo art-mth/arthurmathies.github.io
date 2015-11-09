@@ -68,7 +68,7 @@ app.use(bodyParser.urlencoded({
 var db = require("./db.js");
 {% endhighlight %}
 
-For this specific example, we won't need much set up. The *body-parser* middleware is set up to handle urlencoded data. HTML forms send their data in `application/x-www-form-urlencoded`, which can be parsed by the bodyParser middleware, and  `req.body` will be populated with the data from the form so we can read out the username and password.
+For this specific example, we won't need much set up. The *body-parser* middleware is set up to handle urlencoded data. HTML forms send their data in `application/x-www-form-urlencoded` format, which can be parsed by the bodyParser middleware, and  `req.body` will be populated with the data from the form so we can read out the username and password.
 
 We also need to set up our mongoDB database that will be used to store the username and password as well as our sessions. This code snippet handles that.
 
