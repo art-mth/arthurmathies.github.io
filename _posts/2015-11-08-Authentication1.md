@@ -100,7 +100,7 @@ db.User = mongoose.model("User", db.userSchema);
 module.exports = db;
 {% endhighlight %}
 
-Do not worry about *habitat* for now, I will explain what it does later. Just know that it helps access private variables that you do not want to show in your source code. For this application we use MongoLab for hosting. It is extremely simple to use and great for playing around. The downside is that MongoLab gets extremely expensive quickly and with more data you are better off hosting your own on AWS or something similar. The file exports the database connection and user model so we can use them throughout our application.
+Do not worry about *habitat* for now, I will explain what it does later. Just know that it helps access private variables that you do not want to show in your source code. For this application we use MongoLab for hosting our database. It is extremely simple to use and great for playing around. The downside is that MongoLab gets extremely expensive quickly and with more data you are better off hosting your own on AWS or something similar. The file exports the database connection and user model so we can use them throughout our application.
 
 ###Initialization of *express-session*###
 
@@ -108,7 +108,7 @@ Below you can see the initialization of sessions for our application. Express mi
 
 {% highlight javascript %}
 // our session data store
-var MongoStore = require('connect-mongo')(session);
+var MongoStore = require("connect-mongo")(session);
 var habitat = require("habitat");
 var env = habitat.load(__dirname + "/.env");
 
