@@ -3,6 +3,8 @@ layout: page
 title: About
 ---
 
+![](/assets/about/Arthur_linkedin.jpg)
+
 Hi, my name is Arthur. I am an avid learner and software engineer. I am fascinated by all(most) things revolutionary in tech. I am passionate about leveraging technology to make our lives more full of the things we love. Also I am a Computer Science student at the Technical University of Munich, Germany and build cool applications on the side.
 
 This site is where I ramble about all things that interest me and that seem worth writing about during my journey to becoming a software ninja and explorer in an ever changing world. I am sharing this to map this journey for myself and everyone who is interested and hopefully spread my love for creating cool things.
