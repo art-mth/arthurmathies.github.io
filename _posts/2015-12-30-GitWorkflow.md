@@ -32,34 +32,34 @@ There are two main branches in the organisations repo, `master` and `deploy`. Al
   Example URL: *https://github.com/organisation-name/repo-name*
 
 ####2. **Clone the fork to your local computer**
-  {% highlight shell %}
+  {% highlight sh %}
     $ git clone http://github.com/your-user-name/repo-name.git
   {% endhighlight %}
   
   Your repo is now remote `origin`. Check it if you want by doing `$ git remote -v`.
   
 ####3. **Set your upstream as the team's repo**
-  {% highlight shell %}
+  {% highlight sh %}
     $ git remote add upstream http://github.com/organization-name/repo-name.git
   {% endhighlight %} 
   
 ####4. **Create a new branch**
   Make sure you have the newest code at this point.
  
-  {% highlight shell %}
+  {% highlight sh %}
     $ git checkout master
     $ git pull --rebase upstream master
   {% endhighlight %}
 
   Then create a new branch.
-  {% highlight shell %}
+  {% highlight sh %}
     $ git checkout -b newBranchName
   {% endhighlight %}
 
   Keep the branch names short but descriptive. 
 
 ####5. **Hack away**
-  {% highlight shell %}
+  {% highlight sh %}
     # made changes to code
     $ git status
     $ git add <filename> # or git add .
@@ -79,26 +79,26 @@ There are two main branches in the organisations repo, `master` and `deploy`. Al
   - squash your commits if necessary.
 
 ####7. **Checkout master and pull from upstream**
-  {% highlight shell %}
+  {% highlight sh %}
     $ git checkout master
     $ git pull --rebase upstream master
   {% endhighlight %}
 
 ####8. **Checkout your branch and rebase master**
-  {% highlight shell %}
+  {% highlight sh %}
     $ git checkout yourBranch
     $ git rebase master
   {% endhighlight %}
 
 ####9. **Fix all merge conflicts**
-  {% highlight shell %}
+  {% highlight sh %}
     # fix merge conflicts
     $ git rebase continue
     # repeat until done
   {% endhighlight %}
 
 ####10. **Checkout master and merge your branch**
-  {% highlight shell %}
+  {% highlight sh %}
     $ git checkout master
     $ git merge yourBranch
   {% endhighlight %}
@@ -107,7 +107,7 @@ There are two main branches in the organisations repo, `master` and `deploy`. Al
   And check it again. And make sure it does not break anything.
 
 ####12. **Push to your fork**
-  {% highlight shell %}
+  {% highlight sh %}
     $ git push origin master
   {% endhighlight %}
 
@@ -123,7 +123,7 @@ There are two main branches in the organisations repo, `master` and `deploy`. Al
   Q: But what if I have 3 commits that are really similar?
   A: Squash them.
 
-  {% highlight shell %}
+  {% highlight sh %}
     # check out your recent commits
     $ git log --oneline
     # choose how many you want to squash
