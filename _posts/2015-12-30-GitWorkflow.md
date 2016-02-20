@@ -33,37 +33,37 @@ There are two main branches in the organisations repo, `master` and `deploy`. Al
 
 #### 2. **Clone the fork to your local computer**
   {% highlight sh %}
-    $ git clone http://github.com/your-user-name/repo-name.git
+  $ git clone http://github.com/your-user-name/repo-name.git
   {% endhighlight %}
   
   Your repo is now remote `origin`. Check it if you want by doing `$ git remote -v`.
   
 #### 3. **Set your upstream as the team's repo**
   {% highlight sh %}
-    $ git remote add upstream http://github.com/organization-name/repo-name.git
+  $ git remote add upstream http://github.com/organization-name/repo-name.git
   {% endhighlight %} 
   
 #### 4. **Create a new branch**
   Make sure you have the newest code at this point.
  
   {% highlight sh %}
-    $ git checkout master
-    $ git pull --rebase upstream master
+  $ git checkout master
+  $ git pull --rebase upstream master
   {% endhighlight %}
 
   Then create a new branch.
   {% highlight sh %}
-    $ git checkout -b newBranchName
+  $ git checkout -b newBranchName
   {% endhighlight %}
 
   Keep the branch names short but descriptive. 
 
 #### 5. **Hack away**
   {% highlight sh %}
-    # made changes to code
-    $ git status
-    $ git add <filename> # or git add .
-    $ git commit
+  # made changes to code
+  $ git status
+  $ git add <filename> # or git add .
+  $ git commit
   {% endhighlight %}
 
   Commit often. Break down your task into separate mini-tasks and commit each time. If you realize you made too many commits in the end you can and should squash.
@@ -80,27 +80,27 @@ There are two main branches in the organisations repo, `master` and `deploy`. Al
 
 #### 7. **Checkout master and pull from upstream**
   {% highlight sh %}
-    $ git checkout master
-    $ git pull --rebase upstream master
+  $ git checkout master
+  $ git pull --rebase upstream master
   {% endhighlight %}
 
 #### 8. **Checkout your branch and rebase master**
   {% highlight sh %}
-    $ git checkout yourBranch
-    $ git rebase master
+  $ git checkout yourBranch
+  $ git rebase master
   {% endhighlight %}
 
 #### 9. **Fix all merge conflicts**
   {% highlight sh %}
-    # fix merge conflicts
-    $ git rebase continue
-    # repeat until done
+  # fix merge conflicts
+  $ git rebase continue
+  # repeat until done
   {% endhighlight %}
 
 #### 10. **Checkout master and merge your branch**
   {% highlight sh %}
-    $ git checkout master
-    $ git merge yourBranch
+  $ git checkout master
+  $ git merge yourBranch
   {% endhighlight %}
 
 #### 11. **Check your code again**
@@ -108,7 +108,7 @@ There are two main branches in the organisations repo, `master` and `deploy`. Al
 
 #### 12. **Push to your fork**
   {% highlight sh %}
-    $ git push origin master
+  $ git push origin master
   {% endhighlight %}
 
 #### 13. **Make pull request on github.com**
@@ -124,10 +124,10 @@ There are two main branches in the organisations repo, `master` and `deploy`. Al
   A: Squash them.
 
   {% highlight sh %}
-    # check out your recent commits
-    $ git log --oneline
-    # choose how many you want to squash
-    $ git rebase -i HEAD~3
+  # check out your recent commits
+  $ git log --oneline
+  # choose how many you want to squash
+  $ git rebase -i HEAD~3
   {% endhighlight %}
 
   Select 2 of the commits to be squashed ('squash'), and 1 commit to receive those changes ('pick').
