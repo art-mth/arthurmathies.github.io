@@ -2,19 +2,19 @@
 layout: post
 title: Session-Based Authentication
 ---
-###Introduction###
+### Introduction
 **Authentication** is one of those topics that comes up in almost every web application you will build. There are many ways to handle authentication and the one you chose will depend on the required balance between user **security** and **convenience**.
 
 After having the "authentication" discussion again in one of my recent projects, I decided to write a blog post series on this noteworthy topic. In this series, I will go over the two most widely used ways of handling authentication, **session-based authentication** and **token-based authentication**. I hope to give a clear overview of both of these and how they compare and scale.
 
 This blog post will be, as the title suggests, on the former- session-based authentication. I will go over a simple server implementation and point out common pitfalls and important specifics on the way. I will also go into a little bit more detail on some of the things that I find interesting and important. The code for this post will also be available on Github so you can follow along and play around with the code while reading. In the Github repo, I will also add a very simple front-end so you can see the authentication in action. You can view and download the code [here](https://github.com/arthurmathies/session-based-authentication-tut).
 
-###Sessions###
+### Sessions
 As most of you probably hear and read very often, HTTP is a stateless protocol. What that means is that one request is completely independent of another request; there is no state saved across different requests. **Sessions** are a common solution for this problem, so that the server can save data for the same user over a number of requests. The way this works is through cookies, which store small amounts of data on the client site for a specific client and website. 
 
 For authentication purposes, the server hands out a Session ID, which is signed with a secret key and  kept secure on the server. It then sends the Session ID back to the client, where it is stored in a cookie. Now with every request to the server, the client sends the cookie along with the request. From here,the server can decrypt the Session ID, check if the user is indeed already authenticated, and if not redirect him to an authentication page. On the server, you must always try to protect all routes that contain information you do not want unauthenticated users to be able to access. If someone tries to access those routes you can, for example, simply redirect them to a signin/signup page. Session-based authentication can be a easy and efficient way to do all the former and protect your site from unauthenticated users. One thing to point out though, is that any authentication method will fail if you do not encrypt your connection properly. This is a topic for another blog post though, for now just keep that in mind.
 
-###Skeleton###
+### Skeleton
 Let's quickly go through the directory structure of the application. For the purposes of this blogpost, I have kept all of the server logic and routing, besides database setup, in the `server.js` file. As your application starts to grow, you would not want to do that, but modularize the code into different files with as little dependencies on each other as possible.
 
 {% highlight vctreestatus %}
@@ -42,7 +42,7 @@ Finally the `server.js` file contains all the routing and logic for the applicat
 Enough talking. Let's jump into the code.
 
 
-###Setup###
+### Setup
 First things first-there are a few modules that you need to require in your `server.js` to make your job easier. You could obviously do all of this yourself, but one of the powers of Node is that you have all these great Open Source modules and frameworks available to use in your code.
 
 {% highlight javascript %}
@@ -102,7 +102,7 @@ module.exports = db;
 
 Do not worry about *habitat* for now, I will explain what it does later. Just know that it helps access private variables that you do not want to show in your source code. For this application we use MongoLab for hosting our database. It is extremely simple to use and great for playing around. The downside is that MongoLab gets extremely expensive quickly and with more data you are better off hosting your own on AWS or something similar. The file exports the database connection and user model so we can use them throughout our application.
 
-###Initialization of *express-session*###
+### Initialization of *express-session*
 
 Below you can see the initialization of sessions for our application. Express middleware handles nearly all of the session processing for us. The only thing we have to do is pass in a few options that specify how sessions should be handled.
 
@@ -127,7 +127,7 @@ I am not going to go into too much detail here, but I would love to point out a 
 
 The other thing I would love to point out is the secret. The secret is used to encrypt and decrypt the session cookie, to make sure the Session ID you are receiving is indeed one you also handed out. One thing you generally should not do is put your secret right into your source code. If someone has access to your source code, he or she will also have access to your secret and will be able to fake cookies. A handy way to store your secret is using habitat, which is a library for managing environment variables. You can store your environment variables in an .env file which you add to your .gitignore and have habitat handle the reading out of that data for you. That's it for the session setup. Moving on to the routes.
 
-###Routes###
+### Routes
 
 We will need to handle 6 different routes for our application. For now, only one of them needs protection but depending on if your application interacts with the server a lot you would probably have a lot more protected routes. 
 
@@ -147,9 +147,9 @@ app.get("/signup", function(req, res) {
 
 In the previous code snippet we serve all the static files. Those are the `index.html` file, which in this case just shows you a message congratulating you that you successfully logged in. As you can see we have a middleware function that is called every time you try to access the `/` route or `/index.html` route. `/signup` and `/signin` just serve the forms for the authentication process. Those are also the routes you get redirected to if you are not authenticated.
 
-###User Handling###
+### User Handling
 
-#####Signup#####
+##### Signup
 Let's get to the bread and butter of authentication. I am not going to explain the following too much as it is pretty self-explanatory, but be sure to read the code carefully.
 
 {% highlight javascript %}
@@ -200,7 +200,7 @@ We store the user in the database, create a session for the user, and make it ex
 
 Now we know the user is authenticated and can redirect him to our secured route.
 
-#####Signin#####
+##### Signin
 
 {% highlight javascript %}
 app.post("/api/signin", function(req, res) {
@@ -248,7 +248,7 @@ app.listen(port, function() {
 
 The *express-session* middleware populates req.session with the user for every request if the received cookie contains a Session ID that is valid and not timed out yet. That means the only thing we need to do is check req.session.user. If it is populated we can be sure that the user is indeed already authenticated and allow access. Otherwise again we redirect to `/signin`.
 
-###Wrapping up###
+### Wrapping up
 As you saw, the *express-session* module takes a lot of work off our back so we do not have to worry about reading, writing and decrypting Session ID’s and data. 
 
 
