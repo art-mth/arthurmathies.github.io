@@ -3,7 +3,7 @@ layout: page
 title: Projects
 ---
 
-##Challengr
+## Challengr
 ![](/assets/challengr/challengrMobileSM.jpg)
 **Challengr** is a social challenging app where you can challenge friends to complete the tasks that are long overdue and help them achieve their goals. 
 
@@ -11,7 +11,7 @@ The special thing about **Challengr** is the incentive system. Every time you ch
 
 Check out the application at [challengr.io](http://challengr.io) or on [Github](https://github.com/hacksquare/Challengr). Also check out our [iOS app](https://github.com/hacksquare/Challengr-Native) built in React Native.
 
-##Knapsack
+## Knapsack
 
 ![](/assets/knapsack/mainView.png)
 **Knapsack** is a web application that connects readers. With the ability to share booktitles and personally curated collections of booktitles **Knapsack** makes it easier than ever to share your book recommendations with the community. Hooked up Book API's make it easy to find the books you are looking for and adding them to the collection you choose even easier. 
@@ -20,7 +20,7 @@ Driven by the dream that you do not have to use your notes app to write down the
 
 Check out the application at [knapsack-app.herokuapp.com](https://knapsack-app.herokuapp.com/#/landing) or check it out on [Github](https://github.com/knapsack-app/knapsack)
 
-##Gameplan
+## Gameplan
 
 ![](/assets/gameplan/exampleView.png)
 
@@ -28,7 +28,7 @@ On **Gameplan** you can find sport sites close by to meet up with friends and or
 
 Check **Gameplan** out on [Github](https://github.com/gameplan-app/gameplan).
 
-##aMaze
+## aMaze
 
 ![](/assets/aMaze/aMazeExample.png)
 **aMaze** is a simple maze game harnessing the power of [**lanterna**](https://code.google.com/p/lanterna/). **Lanterna** is a neat console text GUI library for Java(even though an old school one). **aMaze** itself is an ASCII terminal-based application, in which players try to evade dangerous monsters that try to devour them on their way out of the labyrinth. On their way out players have to find the magic key, which is their only way out of the hellish terminal maze.
