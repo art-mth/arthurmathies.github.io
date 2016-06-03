@@ -7,9 +7,7 @@ Hi, my name is Arthur. I am an avid learner and software engineer. I am fascinat
 
 This site is where I ramble about all things that interest me and that seem worth writing about during my journey to becoming a software ninja and explorer in an ever changing world. I am sharing this to map this journey for myself and everyone who is interested and hopefully spread my love for creating cool things.
 
-Currently I am intensively diving into the fascinating world of JavaScript, which seems to be a great tool for making the applications I love.
-
-I hope you enjoy my site and definitely hit me up at <a href="mailto:arthur.mathies@googlemail.com">arthur.mathies@googlemail.com</a> if you have questions or comments about anything on my site. 
+I hope you enjoy my site and definitely hit me up at <a href="mailto:arthur.mathies@gmail.com">arthur.mathies@gmail.com</a> if you have questions or comments about anything on my site. 
 
 Also check out my recent <a href="/projects">Projects</a> and my [LinkedIn](https://linkedin.com/in/arthurmathies) or [Github](https://github.com/arthurmathies) if you are interested.
 
