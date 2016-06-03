@@ -7,14 +7,14 @@ layout: page
 
 **aMaze** is an ASCII terminal-based application that benefits from many of Javas features including automatic garbage-collection and object orientation.
 
-##Features
+## Features
 
-####Menu
+#### Menu
 The menu gives the player the ability to choose between different difficulty levels, start previously saved games or quit the application all together.
 
 ![](/assets/aMaze/mainMenu.png)
 
-####Gameplay
+#### Gameplay
 Levels are randomly generated to give the player a new experience every time. The choosen difficulty level determines different variables in the creation of the game including number of monsters and density of the field.
 
 ![](/assets/aMaze/gameplayEasy.png)
